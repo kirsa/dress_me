@@ -34,25 +34,17 @@ contents of your wardrobe, checks the weather in the given location and randomly
 - Yaml structure
 
 Must be named 'wardrobe.yaml' and be located in same directory as dress_me.py
-[Tops]
-
-  -[OuterLayer]
-  
-    - [Knit]
-    
-    - [Sweatshirts]
-    
-  -[InnerLayer]
-  
-    - [Tshirts]
-    - [Longsleeves]
-    - [Shirts]
-    
- [Bottoms]
- 
- [Socks]
- 
- [Shoes]
+Tops
+  OuterLayer
+    Knit   
+    Sweatshirts
+  InnerLayer
+    Tshirts
+    Longsleeves
+    Shirts   
+ Bottoms
+ Socks
+ Shoes
  
  - Weather data
  
