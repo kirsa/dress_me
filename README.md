@@ -31,23 +31,16 @@ wardrobe.yaml   : Contents of your wardrobe
 The script reads in a yaml file (pass location of file to function that reads yaml) that has all the
 contents of your wardrobe, checks the weather in the given location and randomly generates an outfit.
 
-- Yaml structure
+- Yaml categories
 
-Must be named 'wardrobe.yaml' and be located in same directory as dress_me.py
-Tops
-|
-|-OuterLayer
-|  |- Knit   
-|  |-Sweatshirts
-|    
-|-InnerLayer
-   |
-   |-Tshirts
-   |-Longsleeves
-   |-Shirts
+Tops : Innerlayer (Tshirts, longsleeves, shirts) Outerlayer (Sweatshirts, knit)
+
 Bottoms
-Socks 
+
+Socks
+
 Shoes
+
  
  - Weather data
  
