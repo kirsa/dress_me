@@ -21,24 +21,24 @@ def extract_celcius(rss_title_string):
     celcius = rss_title_string[celcius_index-2]+rss_title_string[celcius_index-1]
     return int(celcius)
 
-def get_sheff_temp_tmr():
-    """ Returns tomorrow's minimum temperature prediction for Sheffield from BBC """
-    sheff_bbc_rss = 'https://weather-broker-cdn.api.bbci.co.uk/en/forecast/rss/3day/2638077'
-    sheff_forecast = feedparser.parse(sheff_bbc_rss)
+def get_min_temp_today(location):
+    """ Returns today's minimum temperature prediction for location from BBC """
+    bbc_rss = 'https://weather-broker-cdn.api.bbci.co.uk/en/forecast/rss/3day/'+location
+    forecast = feedparser.parse(bbc_rss)
     # Index 1 gives tomorrow, 0 gives today, and 2 gives day after
-    temp_forecast = extract_celcius(sheff_forecast.entries[1].title)
+    temp_forecast = extract_celcius(forecast.entries[0].title)
     return temp_forecast
 
-def gen_tmr_outfit(wardrobe):
+def gen_outfit(wardrobe, location):
     """ Generate tomorrow's outfit """
     outfit = []
-    if get_sheff_temp_tmr() < 10:
+    if get_min_temp_today(location) < 10:
         outfit.append(random.choice(wardrobe['Tops']['Inner_layer']['Longsleeves']))
-    if get_sheff_temp_tmr() > 9:
+    if get_min_temp_today(location) > 9:
         outfit.append(random.choice(wardrobe['Tops']['Inner_layer']['Tshirts']))
-    if get_sheff_temp_tmr() < 6:
+    if get_min_temp_today(location) < 6:
         outfit.append(random.choice(wardrobe['Tops']['Outer_layer']['Knit']))
-    if get_sheff_temp_tmr() > 5:
+    if get_min_temp_today(location) > 5:
         outfit.append(random.choice(wardrobe['Tops']['Outer_layer']['Sweatshirts']))
     if 'Caramel_mix_Folk' in outfit:
         outfit.append('Black_Reiss')

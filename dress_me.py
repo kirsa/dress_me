@@ -5,4 +5,5 @@ import dress_me_lib
 
 WARDROBE = dress_me_lib.read_yaml('wardrobe.yaml', '/Users/Home/dress_me/')
 
-print(dress_me_lib.gen_tmr_outfit(WARDROBE))
+# Location in sheffield
+print(dress_me_lib.gen_outfit(WARDROBE, '2638077'))
