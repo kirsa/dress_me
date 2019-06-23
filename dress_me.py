@@ -1,4 +1,4 @@
-""" Dress me script """
+"""Dress me script."""
 
 # Imports
 import dress_me_lib
